@@ -1,0 +1,712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Database</title>
+
+
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+
+    <link id="wsite-base-style" rel="stylesheet" type="text/css"
+          href="http://cdn2.editmysite.com/css/sites.css?buildTime=1234"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn2.editmysite.com/css/old/fancybox.css?1234"/>
+    <link rel="stylesheet" type="text/css" href="http://cdn2.editmysite.com/css/social-icons.css?buildtime=1234"
+          media="screen,projection"/>
+    <link rel="stylesheet" type="text/css" href="files/main_style.css?1523485914" title="wsite-theme-css"/>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,300,200,700&subset=latin,latin-ext' rel='stylesheet'
+          type='text/css'/>
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic&subset=latin,latin-ext'
+          rel='stylesheet' type='text/css'/>
+
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700&subset=latin,latin-ext' rel='stylesheet'
+          type='text/css'/>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700&subset=latin,latin-ext' rel='stylesheet'
+          type='text/css'/>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700&subset=latin,latin-ext' rel='stylesheet'
+          type='text/css'/>
+    <style type='text/css'>
+        .wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-block .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-description, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {
+        }
+
+        #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {
+            color: #000 !important;
+        }
+
+        .wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label {
+        }
+
+        .wsite-elements.wsite-not-footer:not(.wsite-header-elements) h2, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-long .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-large .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {
+            font-family: "Montserrat" !important;
+        }
+
+        #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {
+        }
+
+        .wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title {
+        }
+
+        #wsite-title {
+            color: #3f3f3f !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0px !important;
+        }
+
+        .wsite-menu-default a {
+            letter-spacing: 0px !important;
+        }
+
+        .wsite-menu a {
+        }
+
+        .wsite-image div, .wsite-caption {
+        }
+
+        .galleryCaptionInnerText {
+        }
+
+        .fancybox-title {
+        }
+
+        .wslide-caption-text {
+        }
+
+        .wsite-phone {
+        }
+
+        .wsite-headline, .wsite-header-section .wsite-content-title {
+            font-family: "Montserrat" !important;
+            font-weight: 700 !important;
+        }
+
+        .wsite-headline-paragraph, .wsite-header-section .paragraph {
+            font-family: "Montserrat" !important;
+            font-weight: 400 !important;
+            font-style: normal !important;
+        }
+
+        .wsite-button-inner {
+            font-weight: 400 !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0px !important;
+        }
+
+        .wsite-not-footer blockquote {
+        }
+
+        .wsite-footer blockquote {
+        }
+
+        .blog-header h2 a {
+        }
+
+        #wsite-content h2.wsite-product-title {
+        }
+
+        .wsite-product .wsite-product-price a {
+        }
+
+        .wsite-button-small .wsite-button-inner {
+            font-size: 20px !important;
+        }
+
+        .wsite-button-large .wsite-button-inner {
+            font-size: 25px !important;
+        }
+
+        @media screen and (min-width: 767px) {
+            .wsite-elements.wsite-not-footer:not(.wsite-header-elements) div.paragraph, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) p, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-block .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-description, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .wsite-form-field label, #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {
+            }
+
+            #wsite-content div.paragraph, #wsite-content p, #wsite-content .product-block .product-title, #wsite-content .product-description, #wsite-content .wsite-form-field label, #wsite-content .wsite-form-field label, .blog-sidebar div.paragraph, .blog-sidebar p, .blog-sidebar .wsite-form-field label, .blog-sidebar .wsite-form-field label {
+            }
+
+            .wsite-elements.wsite-footer div.paragraph, .wsite-elements.wsite-footer p, .wsite-elements.wsite-footer .product-block .product-title, .wsite-elements.wsite-footer .product-description, .wsite-elements.wsite-footer .wsite-form-field label, .wsite-elements.wsite-footer .wsite-form-field label {
+            }
+
+            .wsite-elements.wsite-not-footer:not(.wsite-header-elements) h2, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-long .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-large .product-title, .wsite-elements.wsite-not-footer:not(.wsite-header-elements) .product-small .product-title, #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {
+            }
+
+            #wsite-content h2, #wsite-content .product-long .product-title, #wsite-content .product-large .product-title, #wsite-content .product-small .product-title, .blog-sidebar h2 {
+            }
+
+            .wsite-elements.wsite-footer h2, .wsite-elements.wsite-footer .product-long .product-title, .wsite-elements.wsite-footer .product-large .product-title, .wsite-elements.wsite-footer .product-small .product-title {
+            }
+
+            #wsite-title {
+                font-size: 100px !important;
+            }
+
+            .wsite-menu-default a {
+                font-size: 18px !important;
+            }
+
+            .wsite-menu a {
+            }
+
+            .wsite-image div, .wsite-caption {
+            }
+
+            .galleryCaptionInnerText {
+            }
+
+            .fancybox-title {
+            }
+
+            .wslide-caption-text {
+            }
+
+            .wsite-phone {
+            }
+
+            .wsite-headline, .wsite-header-section .wsite-content-title {
+                font-size: 50px !important;
+                line-height: 6px !important;
+            }
+
+            .wsite-headline-paragraph, .wsite-header-section .paragraph {
+            }
+
+            .wsite-button-inner {
+            }
+
+            .wsite-not-footer blockquote {
+            }
+
+            .wsite-footer blockquote {
+            }
+
+            .blog-header h2 a {
+            }
+
+            #wsite-content h2.wsite-product-title {
+            }
+
+            .wsite-product .wsite-product-price a {
+            }
+        }</style>
+    <style>
+        .wsite-background {
+            background-image: url("/images/4/5/1/8/45182585/background-images/503105462.jpg") !important;
+            background-repeat: no-repeat !important;
+            background-position: undefined undefined !important;
+            background-size: 100% !important;
+            background-color: transparent !important;
+        }
+
+        body.wsite-background {
+            background-attachment: fixed !important;
+        }
+
+        .wsite-background.wsite-custom-background {
+            background-size: cover !important
+        }
+    </style>
+    <script>
+        var STATIC_BASE = '//cdn1.editmysite.com/';
+        var ASSETS_BASE = '//cdn2.editmysite.com/';
+        var STYLE_PREFIX = 'wsite';
+    </script>
+    <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+
+    <script type="text/javascript" src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&"></script>
+    <script src="http://cdn2.editmysite.com/js/site/main.js?buildTime=1234"></script>
+    <script type="text/javascript">_W.configDomain = "www.weebly.com";</script>
+    <script>_W.relinquish && _W.relinquish()</script>
+    <script type="text/javascript" src="http://cdn2.editmysite.com/js/lang/en/stl.js?buildTime=1234&"></script>
+    <script> _W.themePlugins = [];</script>
+    <script type="text/javascript"> _W.recaptchaUrl = "https://www.google.com/recaptcha/api.js"; </script>
+    <script type="text/javascript"> window._W = window._W || {};
+    _W.showV2Footer = 0; </script>
+    <script type="text/javascript"><!--
+    var IS_ARCHIVE = 1;
+
+    function initFlyouts() {
+        initPublishedFlyoutMenus(
+            [{
+                "id": "169356528741264934",
+                "title": "Home",
+                "url": "index.html",
+                "target": "",
+                "nav_menu": false,
+                "nonclickable": false
+            }, {
+                "id": "983557027423042347",
+                "title": "Database",
+                "url": "database.html",
+                "target": "",
+                "nav_menu": false,
+                "nonclickable": false
+            }, {
+                "id": "221035643214672585",
+                "title": "Benchmarks",
+                "url": "benchmarks.html",
+                "target": "",
+                "nav_menu": false,
+                "nonclickable": false
+            }, {
+                "id": "556011516974268638",
+                "title": "Download",
+                "url": "download.html",
+                "target": "",
+                "nav_menu": false,
+                "nonclickable": false
+            }, {
+                "id": "524605081467010933",
+                "title": "Github",
+                "url": "https:\/\/github.com\/huskyjo\/FIW_KRT",
+                "target": "_blank",
+                "nav_menu": false,
+                "nonclickable": false
+            }, {
+                "id": "928391690993736707",
+                "title": "About",
+                "url": "about.html",
+                "target": "",
+                "nav_menu": false,
+                "nonclickable": false
+            }],
+            "983557027423042347",
+            '',
+            'active',
+            false,
+            {
+                "navigation\/item": "<li {{#id}}id=\"{{id}}\"{{\/id}} class=\"wsite-menu-item-wrap\">\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\t{{#membership_required}}\n\t\t\tdata-membership-required=\"{{.}}\"\n\t\t{{\/membership_required}}\n\t\tclass=\"wsite-menu-item\"\n\t\t>\n\t\t{{{title_html}}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n",
+                "navigation\/flyout\/list": "<div class=\"wsite-menu-wrap\" style=\"display:none\">\n\t<ul class=\"wsite-menu\">\n\t\t{{#children}}{{> navigation\/flyout\/item}}{{\/children}}\n\t<\/ul>\n<\/div>\n",
+                "navigation\/flyout\/item": "<li {{#id}}id=\"{{id}}\"{{\/id}}\n\tclass=\"wsite-menu-subitem-wrap {{#is_current}}wsite-nav-current{{\/is_current}}\"\n\t>\n\t<a\n\t\t{{^nonclickable}}\n\t\t\t{{^nav_menu}}\n\t\t\t\thref=\"{{url}}\"\n\t\t\t{{\/nav_menu}}\n\t\t{{\/nonclickable}}\n\t\t{{#target}}\n\t\t\ttarget=\"{{target}}\"\n\t\t{{\/target}}\n\t\tclass=\"wsite-menu-subitem\"\n\t\t>\n\t\t<span class=\"wsite-menu-title\">\n\t\t\t{{{title_html}}}\n\t\t<\/span>{{#has_children}}<span class=\"wsite-menu-arrow\">&gt;<\/span>{{\/has_children}}\n\t<\/a>\n\t{{#has_children}}{{> navigation\/flyout\/list}}{{\/has_children}}\n<\/li>\n"
+            },
+            {}
+        )
+    }
+
+    //-->
+    </script>
+
+    <script type="text/javascript">(function (d, s, id) {
+        var z = d.createElement(s);
+        z.type = "text/javascript";
+        z.id = id;
+        z.async = true;
+        z.src = "http://static.zotabox.com/d/3/d33d229e5c28f381cf8d59861d44e1a4/widgets.js";
+        var sz = d.getElementsByTagName(s)[0];
+        sz.parentNode.insertBefore(z, sz)
+    }(document, "script", "zb-embed-code"));</script>
+</head>
+<body class="no-header  wsite-page-database  full-width-off  wsite-theme-light">
+<div class="body-wrap">
+
+    <div id="header">
+        <div class="nav-trigger hamburger">
+            <div class="open-btn">
+                <span class="mobile"></span>
+                <span class="mobile"></span>
+                <span class="mobile"></span>
+            </div>
+        </div>
+        <div id="sitename"><span class="wsite-logo">
+
+	
+	<span class="wsite-title-placeholder">&nbsp;</span><span style="display:none">
+	<span style="display:none">Families in the wild</span>
+	</span>
+	
+
+</span></div>
+    </div>
+
+    <div id="wrapper">
+        <div class="bg-wrapper">
+            <div id="navigation">
+                <ul class="wsite-menu-default">
+                    <li id="pg169356528741264934" class="wsite-menu-item-wrap">
+                        <a
+                                href="index.html"
+                                class="wsite-menu-item"
+                        >
+                            Home
+                        </a>
+
+                    </li>
+                    <li id="active" class="wsite-menu-item-wrap">
+                        <a
+                                href="database.html"
+                                class="wsite-menu-item"
+                        >
+                            Database
+                        </a>
+
+                    </li>
+                    <li id="pg221035643214672585" class="wsite-menu-item-wrap">
+                        <a
+                                href="benchmarks.html"
+                                class="wsite-menu-item"
+                        >
+                            Benchmarks
+                        </a>
+
+                    </li>
+                    <li id="pg655742863601509550" class="wsite-menu-item-wrap">
+                        <a
+                                href="https://web.northeastern.edu/smilelab/RFIW2018/"
+                                class="wsite-menu-item"
+                        >
+                            Challenges
+                        </a>
+                        <div class="wsite-menu-wrap" style="display:none">
+                            <ul class="wsite-menu">
+                                <li id="wsite-nav-699532551699124083"
+                                    class="wsite-menu-subitem-wrap "
+                                >
+                                    <a
+                                            href="https://competitions.codalab.org/competitions/16745"
+                                            class="wsite-menu-subitem"
+                                    >
+		<span class="wsite-menu-title">
+			Verification (T-1)
+		</span>
+                                    </a>
+
+                                </li>
+                                <li id="wsite-nav-624614425980315946"
+                                    class="wsite-menu-subitem-wrap "
+                                >
+                                    <a
+                                            href="https://competitions.codalab.org/competitions/17973"
+                                            class="wsite-menu-subitem"
+                                    >
+		<span class="wsite-menu-title">
+			Classification (T-2)
+		</span>
+                                    </a>
+
+                                </li>
+
+                            </ul>
+                        </div>
+
+                    </li>
+                    <li id="pg556011516974268638" class="wsite-menu-item-wrap">
+                        <a
+                                href="download.html"
+                                class="wsite-menu-item"
+                        >
+                            Download
+                        </a>
+
+                    </li>
+                    <li id="pg524605081467010933" class="wsite-menu-item-wrap">
+                        <!--<li id="pg524605081467010933" class="wsite-menu-item-wrap">-->
+                        <!--<a-->
+                        <!--href="https://github.com/huskyjo/FIW_KRT"-->
+                        <!--target="_blank"-->
+                        <!--class="wsite-menu-item"-->
+                        <!--&gt;-->
+                        <!--Github-->
+                        <!--</a>-->
+
+                        <!--</li>-->
+
+                    <li id="pg928391690993736707" class="wsite-menu-item-wrap">
+                        <a
+                                href="publications.html"
+                                class="wsite-menu-item"
+                        >
+                            Publications
+                        </a>
+
+                    </li>
+                    <li id="pg524605081467010933" class="wsite-menu-item-wrap">
+                        <a
+                                href="people.html"
+                                class="wsite-menu-item"
+                        >
+                            People
+                        </a>
+
+                    </li>
+                </ul>
+            </div>
+            <div id="content-wrapper">
+                <div id="wsite-content" class="wsite-elements wsite-not-footer">
+                    <div class="wsite-section-wrap">
+                        <div class="wsite-section wsite-body-section wsite-background-17 wsite-custom-background">
+                            <div class="wsite-section-content">
+                                <div class="container">
+                                    <div class="wsite-section-elements">
+                                        <h2 class="wsite-content-title" style="text-align:center;">&nbsp;Families In The
+                                            Wild (FIW) Database</h2>
+
+                                        <div class="paragraph">FIW is the <strong>largest</strong> and
+                                            <strong>most</strong> <strong>comprehensive</strong> database available for
+                                            kinship recognition. FIW is made up of <strong>11,932</strong>&nbsp;natural
+                                            family photos of <strong>1,000</strong> families-- nearly 10x more than the
+                                            next-to-largest, Family-101 [7] database. Also, we have&nbsp;<span
+                                                    style="font-weight:700">656,954&nbsp;</span><span>image pairs split between the 11 relationship (see Figure 1), which is much larger than the 2nd to largest Kin-Wild II with 2,000 pairs for only 4 kinship types. For more information about FIW see [1].</span>
+                                        </div>
+
+                                        <div>
+                                            <div class="wsite-multicol">
+                                                <div class="wsite-multicol-table-wrap" style="margin:0 -15px;">
+                                                    <table class="wsite-multicol-table">
+                                                        <tbody class="wsite-multicol-tbody">
+                                                        <tr class="wsite-multicol-tr">
+                                                            <td class="wsite-multicol-col"
+                                                                style="width:52.26586102719%; padding:0 15px;">
+
+
+                                                                <div class="paragraph">The goal of kinship verification
+                                                                    is to determine whether a pair of faces are blood
+                                                                    relatives or not. This task has seen lots of
+                                                                    attention, which mainly focus on&nbsp;<em>parent-child&nbsp;</em>pair-wise
+                                                                    types-- &nbsp;<span style="color:rgb(42, 42, 42)">&nbsp;father- daughter (F-D), father-son (F-S), mother-daughter (M-D), mother-son (M-S)--&nbsp;</span>though
+                                                                    some have also focused on siblings pairs--&nbsp;brother-brother
+                                                                    (B-B), sister-sister (S-S). This challenge supports
+                                                                    all prior pair-wise types in sets much larger than
+                                                                    previously offered to the research community. In
+                                                                    addition, we introduce
+                                                                    <em>grandparent-grandchild</em>&nbsp;pairs for the
+                                                                    first time-- grandfather-granddaughter (GF-GD),
+                                                                    grandfather-grandson (GF-GS), &nbsp;grandmother-granddaughter
+                                                                    (GM-GD), grandmother-grandson (GM-GS). As stated on
+                                                                    <a href="benchmarks.html" target="_blank">the
+                                                                        results page</a>, our top performing benchmark
+                                                                    scored an average accuracy of about 71%, so not only
+                                                                    is there room for improvement, but also a need for
+                                                                    more reliable systems before such technology is
+                                                                    employed for practical purposes. This large-scale
+                                                                    kinship verification challenge is made possible with
+                                                                    the recently introduced FIW database. Kinship
+                                                                    verification has the potential to improve social
+                                                                    media tagging, ancestry/genealogy site suggestions,
+                                                                    along with many other applications in technology and
+                                                                    media.
+                                                                </div>
+
+
+                                                            </td>
+                                                            <td class="wsite-multicol-col"
+                                                                style="width:47.73413897281%; padding:0 15px;">
+
+
+                                                                <div>
+                                                                    <div class="wsite-image wsite-image-border-none "
+                                                                         style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
+                                                                        <a>
+                                                                            <img src="images/facepairs.png"
+                                                                                 alt="Picture"
+                                                                                 style="width:auto;max-width:100%"/>
+                                                                        </a>
+                                                                        <div style="display:block;font-size:90%">Samples
+                                                                            of 11 pair types of FIW. Each type is of a
+                                                                            unique pair randomly selected from a set of
+                                                                            diverse families to show variation in
+                                                                            ethnicity, while four faces of each
+                                                                            individual depict age variations.
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+
+
+                                                            </td>
+                                                        </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="paragraph"><span>FIW is made-up of </span>11,932<span> family photos that span 1,000 different families, with the data distributed fairly: an average of about 12 images per family, each with at least 3 and as many as 38 members. The FIW database is contains rich labels capturing the complex hierarchical relationships inherited throughout families (i.e., family trees).<br/></span>
+                                        </div>
+
+                                        <div>
+                                            <div class="wsite-image wsite-image-border-none "
+                                                 style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
+                                                <a>
+                                                    <img src="images/famimages.png"
+                                                         alt="Picture" style="width:auto;max-width:100%"/>
+                                                </a>
+                                                <div style="display:block;font-size:90%"> Sample family photos from FIW
+                                                    for 27 of the 1, 000.
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div>
+                                            <div class="wsite-image wsite-image-border-none "
+                                                 style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
+                                                <a>
+                                                    <img src="images/royalftree.png" alt="Picture"
+                                                         style="width:auto;max-width:100%"/>
+                                                </a>
+                                                <div style="display:block;font-size:90%"> Sample family photos from FIW
+                                                    for 27 of the 1, 000.
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div>
+                                            <div class="wsite-image wsite-image-border-none "
+                                                 style="padding-top:0px;padding-bottom:0px;margin-left:0px;margin-right:0px;text-align:center">
+                                                <a>
+                                                    <img src="images/royalimages.png" alt="Picture"
+                                                         style="width:auto;max-width:100%"/>
+                                                </a>
+                                                <div style="display:block;font-size:90%"> Sample family photos from FIW
+                                                    for 27 of the 1, 000.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div>
+                                            <div class="wsite-image wsite-image-border-none "
+                                                 style="padding-top:10px;padding-bottom:10px;margin-left:0px;margin-right:0px;text-align:center">
+                                                <a>
+                                                    <img src="images/family_montage_big.png" alt="Picture"
+                                                         style="width:auto;max-width:100%"/>
+                                                </a>
+                                                <div style="display:block;font-size:90%"> Sample family photos from FIW
+                                                    for 27 of the 1, 000.
+                                                </div>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="wsite-spacer" style="height:50px;"></div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <!--<div id="footer">-->
+        <!--<div id="footer-content">Create a <a target="_top" href="http://www.weebly.com/">free web site</a> with <a target="_top" href="http://www.weebly.com/" title="free web site">Weebly</a></div>-->
+        <!--</div>-->
+    </div>
+
+    <div class="navmobile-wrapper">
+        <div id="navmobile" class="nav">
+            <ul class="wsite-menu-default">
+                <li id="pg169356528741264934" class="wsite-menu-item-wrap">
+                    <a
+                            href="index.html"
+                            class="wsite-menu-item"
+                    >
+                        Home
+                    </a>
+
+                </li>
+                <li id="active" class="wsite-menu-item-wrap">
+                    <a
+                            href="database.html"
+                            class="wsite-menu-item"
+                    >
+                        Database
+                    </a>
+
+                </li>
+                <li id="pg221035643214672585" class="wsite-menu-item-wrap">
+                    <a
+                            href="benchmarks.html"
+                            class="wsite-menu-item"
+                    >
+                        Benchmarks
+                    </a>
+
+                </li>
+                <li id="pg655742863601509550" class="wsite-menu-item-wrap">
+                    <a
+                            href="https://web.northeastern.edu/smilelab/RFIW2018/"
+                            class="wsite-menu-item"
+                    >
+                        Challenges
+                    </a>
+                    <div class="wsite-menu-wrap" style="display:none">
+                        <ul class="wsite-menu">
+                            <li id="wsite-nav-699532551699124083"
+                                class="wsite-menu-subitem-wrap "
+                            >
+                                <a
+                                        href="https://competitions.codalab.org/competitions/16745"
+                                        class="wsite-menu-subitem"
+                                >
+		<span class="wsite-menu-title">
+			Verification (T-1)
+		</span>
+                                </a>
+
+                            </li>
+                            <li id="wsite-nav-624614425980315946"
+                                class="wsite-menu-subitem-wrap "
+                            >
+                                <a
+                                        href="https://competitions.codalab.org/competitions/17973"
+                                        class="wsite-menu-subitem"
+                                >
+		<span class="wsite-menu-title">
+			Classification (T-2)
+		</span>
+                                </a>
+
+                            </li>
+
+                        </ul>
+                    </div>
+
+                </li>
+                <li id="pg556011516974268638" class="wsite-menu-item-wrap">
+                    <a
+                            href="download.html"
+                            class="wsite-menu-item"
+                    >
+                        Download
+                    </a>
+
+                </li>
+                <!--<li id="pg524605081467010933" class="wsite-menu-item-wrap">-->
+                <!--<a-->
+                <!--href="https://github.com/huskyjo/FIW_KRT"-->
+                <!--target="_blank"-->
+                <!--class="wsite-menu-item"-->
+                <!--&gt;-->
+                <!--Github-->
+                <!--</a>-->
+
+                <!--</li>-->
+
+                <li id="pg928391690993736707" class="wsite-menu-item-wrap">
+                    <a
+                            href="publications.html"
+                            class="wsite-menu-item"
+                    >
+                        Publications
+                    </a>
+
+                </li>
+                <li id="pg524605081467010933" class="wsite-menu-item-wrap">
+                    <a
+                            href="people.html"
+                            class="wsite-menu-item"
+                    >
+                        People
+                    </a>
+
+                </li>
+            </ul>
+        </div>
+    </div>
+
+</div>
+
+
+<script language="javascript" src="files/theme/plugins.js"></script>
+<script language="javascript" src="files/theme/custom.js"></script>
+<script language="javascript" src="files/theme/mobile.js"></script>
+
+
+</body>
+</html>
